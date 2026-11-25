@@ -1,0 +1,117 @@
+<!doctype html>
+<html lang="de">
+<head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1"><meta name="theme-color" content="#0b1220"><title>SmartPrice Germany — Produktvergleich</title>
+<style>
+:root{--bg:#0b1220;--panel:#121e31;--line:#ffffff16;--muted:#9aabc2;--text:#f4f7fb;--cyan:#65e2dc;--violet:#a78bfa;--orange:#ffb86b;--green:#7ee0a3}
+*{box-sizing:border-box}body{margin:0;background:radial-gradient(950px 520px at 0% -10%,#24516a 0,transparent 62%),radial-gradient(850px 500px at 100% 0%,#50335f 0,transparent 58%),linear-gradient(145deg,#09121f,#121b2b 55%,#10192b);color:var(--text);font:15px/1.5 Inter,system-ui,-apple-system,Segoe UI,sans-serif;min-height:100vh}
+button,input,select{font:inherit}a{color:inherit;text-decoration:none}.wrap{max-width:1200px;margin:auto;padding:20px 24px 60px}
+nav{display:flex;justify-content:space-between;align-items:center;gap:14px;padding:7px 0 26px}.brand{display:flex;align-items:center;gap:11px;font-size:21px;font-weight:900;letter-spacing:-.8px}.logo{width:40px;height:40px;border-radius:14px;background:linear-gradient(135deg,var(--cyan),#9d8bff 65%,var(--orange));display:grid;place-items:center;color:#102033;font-weight:1000;box-shadow:0 8px 30px #65e2dc35}.grad{background:linear-gradient(90deg,var(--cyan),#b9a7ff 55%,#ffc27e);-webkit-background-clip:text;background-clip:text;color:transparent}.pill{border:1px solid var(--line);background:#ffffff09;border-radius:999px;padding:8px 13px;color:#d9e5f4;font-size:12px}
+.hero{display:grid;grid-template-columns:1.3fr .7fr;gap:18px}.hero-main,.hero-side,.panel{border:1px solid var(--line);border-radius:25px;background:linear-gradient(145deg,#1a2a40ed,#101a2bed);box-shadow:0 24px 75px #0003}.hero-main{padding:34px;position:relative;overflow:hidden}.hero-main:after{content:"";position:absolute;right:-100px;bottom:-190px;width:350px;height:350px;background:radial-gradient(circle,#65e2dc55,transparent 68%)}.eyebrow{color:var(--cyan);font-size:11px;font-weight:850;letter-spacing:1.7px;text-transform:uppercase}.hero h1{font-size:clamp(36px,5vw,60px);line-height:1.02;letter-spacing:-2.7px;margin:14px 0}.lead{max-width:650px;color:#b8c7da;font-size:16px}.search{display:flex;gap:9px;margin-top:25px;position:relative;z-index:1}.field,select{background:#0a1423;border:1px solid #ffffff20;border-radius:12px;color:var(--text);padding:13px 14px;min-width:0;outline:none}.search input{flex:1}.field:focus,select:focus{border-color:var(--cyan);box-shadow:0 0 0 3px #65e2dc19}.btn{border:0;border-radius:12px;padding:13px 17px;background:linear-gradient(110deg,var(--cyan),#b5f0cf);color:#0a202a;font-weight:850;cursor:pointer}.btn:disabled{opacity:.5;cursor:wait}.hero-side{padding:24px;background:linear-gradient(145deg,#30264b,#17263c);display:flex;flex-direction:column;justify-content:space-between}.side-title{font-size:28px;font-weight:900;letter-spacing:-1px}.side-note{font-size:12px;color:#b7c5d8}.mini-bars{height:82px;display:flex;align-items:end;gap:7px}.mini-bars i{flex:1;border-radius:7px 7px 2px 2px;background:linear-gradient(180deg,var(--cyan),var(--violet))}
+.head{display:flex;justify-content:space-between;align-items:end;gap:12px;margin:30px 0 14px}.head h2{margin:0;font-size:23px;letter-spacing:-.7px}.head p{margin:4px 0 0;color:var(--muted);font-size:13px}.categories{display:grid;grid-template-columns:repeat(6,1fr);gap:11px}.cat{padding:15px 13px;border-radius:17px;border:1px solid var(--line);background:linear-gradient(145deg,#ffffff10,#ffffff04);min-height:112px;transition:.2s;cursor:pointer}.cat:hover,.cat.active{transform:translateY(-2px);border-color:#65e2dc80;background:#65e2dc12}.ico{font-size:22px;margin-bottom:7px}.cat b{display:block;font-size:13px}.cat small{color:var(--muted);font-size:10px}
+.panel{padding:22px;margin-top:16px}.toolbar{display:flex;gap:9px;flex-wrap:wrap;margin:15px 0}.toolbar select{min-width:150px}.status{padding:12px 14px;border:1px solid #ffb86b44;background:#ffb86b0d;color:#f4d5aa;border-radius:12px;font-size:12px}.results{display:grid;gap:10px;margin-top:14px}.empty{padding:26px;text-align:center;color:var(--muted);border:1px dashed #ffffff25;border-radius:15px;font-size:13px}.product{display:grid;grid-template-columns:1fr auto;gap:14px;align-items:center;padding:16px;border:1px solid var(--line);border-radius:15px;background:#ffffff08}.product h3{margin:0 0 4px;font-size:15px}.product p{margin:0;color:var(--muted);font-size:11px}.actions{display:flex;gap:8px;flex-wrap:wrap}.link{font-size:11px;color:var(--cyan);border:1px solid #65e2dc55;border-radius:9px;padding:8px 10px}.section-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:12px}.feature{border:1px solid var(--line);border-radius:16px;padding:17px;background:#ffffff08}.feature b{display:block;margin-bottom:5px}.feature span{color:var(--muted);font-size:12px}.foot{margin-top:25px;color:#8192aa;font-size:11px;display:flex;justify-content:space-between;gap:10px;flex-wrap:wrap}
+@media(max-width:850px){.hero{grid-template-columns:1fr}.categories{grid-template-columns:repeat(3,1fr)}.section-grid{grid-template-columns:1fr 1fr}}
+@media(max-width:520px){.wrap{padding:14px}.hero-main{padding:24px}.hero h1{font-size:37px}.search{flex-direction:column}.categories{grid-template-columns:repeat(2,1fr)}.head{align-items:flex-start;flex-direction:column}.product{grid-template-columns:1fr}.section-grid{grid-template-columns:1fr}}
+</style></head>
+<body><div class="wrap">
+<nav><a class="brand" href="#"><span class="logo">S</span><span>smart<span class="grad">price</span><small style="display:block;color:#90a2ba;font-size:9px;letter-spacing:2px;margin-top:-4px">GERMANY</small></span></a><div style="display:flex;align-items:center;gap:8px"><span class="pill">🇩🇪 Deutschland</span><label for="languageSelect" style="font-size:12px;color:#b8c7da">Sprache</label><select id="languageSelect" aria-label="Sprache auswählen" style="width:auto;padding:8px 11px;border-radius:999px"><option value="de">Deutsch</option><option value="hu">Magyar</option></select></div></nav>
+<section class="hero"><div class="hero-main"><div class="eyebrow">Produktvergleich · Deutschland</div><h1>Kauf nicht den Preis.<br><span class="grad">Finde den besten Deal.</span></h1><p class="lead">Vergleiche Angebote für Technik, Haushalt, Auto, Mode und mehr. Wir zeigen Preise nur dann als verifiziert, wenn sie aus einer freigegebenen Händlerquelle stammen.</p><div class="search"><input id="q" class="field" placeholder="Produkt suchen – z. B. iPhone 17, Bosch Akkuschrauber …"><button id="search" class="btn">Angebote finden ↗</button></div><div style="display:flex;gap:8px;flex-wrap:wrap;margin-top:13px"><span class="pill">✓ Händlerquelle</span><span class="pill">✓ Zeitstempel</span><span class="pill">✓ Versandkosten im Vergleich</span></div></div>
+<div class="hero-side"><div><div style="font-size:11px;color:var(--cyan);font-weight:800;letter-spacing:1.5px">SMART SHOPPING</div><div class="side-title">Mehr Überblick.<br>Weniger bezahlen.</div><p class="side-note">Produktvarianten sauber zuordnen, Gesamtpreise vergleichen und Preisalarme setzen.</p></div><div class="mini-bars"><i style="height:35%"></i><i style="height:54%"></i><i style="height:43%"></i><i style="height:75%"></i><i style="height:61%"></i><i style="height:89%"></i><i style="height:70%"></i><i style="height:100%"></i></div><div class="side-note">Keine erfundenen Beispielpreise in den Suchergebnissen.</div></div></section>
+<div class="head"><div><h2>Beliebte Kategorien</h2><p>Von Elektronik bis Autozubehör – ein Produktvergleich für Deutschland.</p></div></div>
+<div class="categories" id="categories">
+<div class="cat" data-cat="electronics"><div class="ico">📱</div><b>Elektronik</b><small>Smartphones, PC, TV</small></div><div class="cat" data-cat="home"><div class="ico">🏡</div><b>Haus & Garten</b><small>Haushalt, Möbel, Werkzeug</small></div><div class="cat" data-cat="auto"><div class="ico">🚗</div><b>Auto & Zubehör</b><small>Teile, Reifen, Pflege</small></div><div class="cat" data-cat="fashion"><div class="ico">👟</div><b>Mode & Sport</b><small>Kleidung, Schuhe</small></div><div class="cat" data-cat="beauty"><div class="ico">🧴</div><b>Drogerie</b><small>Pflege, Gesundheit</small></div><div class="cat" data-cat="everyday"><div class="ico">🛒</div><b>Alltag</b><small>Haushalt, Lebensmittel</small></div>
+</div>
+<section class="panel"><div class="head" style="margin-top:0"><div><h2 id="resultTitle">Produktangebote vergleichen</h2><p>Suchergebnisse aus angeschlossenen und freigegebenen Händler-Feeds.</p></div><span class="pill">LIVE-DATEN ERFORDERLICH</span></div>
+<div class="toolbar"><select id="sort"><option value="price">Gesamtpreis: aufsteigend</option><option value="recent">Zuletzt aktualisiert</option></select><select id="availability"><option value="all">Alle Verfügbarkeiten</option><option value="in">Sofort lieferbar</option></select></div>
+<div class="status">Die Produktdatenbank wird gerade vorbereitet. Bis mindestens ein Händler-Feed freigegeben und verbunden ist, zeigen wir keine Preise als aktuell an. Die Suche kann bereits getestet werden; externe Preisvergleichslinks werden separat gekennzeichnet.</div>
+<div id="results" class="results"><div class="empty">Suche ein Produkt oder wähle eine Kategorie. Verifizierte Händlerpreise erscheinen nach Anbindung der Datenpartner.</div></div>
+</section>
+<section class="panel"><div class="head" style="margin-top:0"><div><h2>So prüfen wir Angebote</h2><p>Transparenz statt Fantasiepreise.</p></div></div><div class="section-grid"><div class="feature">🔎 <b>Exakte Produktzuordnung</b><span>EAN/GTIN, Marke, Modell, Größe, Farbe und Variante werden getrennt geprüft.</span></div><div class="feature">🚚 <b>Gesamtpreis</b><span>Artikelpreis plus Versandkosten, mit Lieferstatus und Händler.</span></div><div class="feature">🕒 <b>Frische Daten</b><span>Jede Offerte saját lekérdezési időt és forrást kap. Elavult ajánlatot nem nevezünk aktuálisnak.</span></div></div></section>
+<section class="panel"><div class="head" style="margin-top:0"><div><h2>⛽ Kraftstoffpreise</h2><p>Die Tankstellensuche kommt in einer späteren Ausbaustufe.</p></div><span class="pill">SPÄTER</span></div><div class="empty">Most a termékárak összehasonlítására koncentrálunk. Az üzemanyagmodul nem része ennek a fejlesztési szakasznak.</div></section>
+<div class="foot"><span>© SmartPrice Germany · Produktvergleich MVP</span><span>Preise nur aus freigegebenen Datenquellen · Impressum · Datenschutz</span></div>
+</div>
+<script>
+const $=id=>document.getElementById(id);let selectedCategory="";
+const translations={
+de:{
+ eyebrow:"Produktvergleich · Deutschland",title:'Kauf nicht den Preis.<br><span class="grad">Finde den besten Deal.</span>',
+ lead:"Vergleiche Angebote für Technik, Haushalt, Auto, Mode und mehr. Wir zeigen Preise nur dann als verifiziert, wenn sie aus einer freigegebenen Händlerquelle stammen.",
+ searchPlaceholder:"Produkt suchen – z. B. iPhone 17, Bosch Akkuschrauber …",searchButton:"Angebote finden ↗",
+ chips:["✓ Händlerquelle","✓ Zeitstempel","✓ Versandkosten im Vergleich"],sideLabel:"SMART SHOPPING",sideTitle:"Mehr Überblick.<br>Weniger bezahlen.",sideNote:"Produktvarianten sauber zuordnen, Gesamtpreise vergleichen und Preisalarme setzen.",
+ sideFoot:"Keine erfundenen Beispielpreise in den Suchergebnissen.",categories:"Beliebte Kategorien",categoriesSub:"Von Elektronik bis Autozubehör – ein Produktvergleich für Deutschland.",
+ cats:[["Elektronik","Smartphones, PC, TV"],["Haus & Garten","Haushalt, Möbel, Werkzeug"],["Auto & Zubehör","Teile, Reifen, Pflege"],["Mode & Sport","Kleidung, Schuhe"],["Drogerie","Pflege, Gesundheit"],["Alltag","Haushalt, Lebensmittel"]],
+ resultTitle:"Produktangebote vergleichen",resultSub:"Suchergebnisse aus angeschlossenen und freigegebenen Händler-Feeds.",live:"LIVE-DATEN ERFORDERLICH",sortPrice:"Gesamtpreis: aufsteigend",sortRecent:"Zuletzt aktualisiert",availability:"Alle Verfügbarkeiten",available:"Sofort lieferbar",
+ notice:"Die Produktdatenbank wird gerade vorbereitet. Bis mindestens ein Händler-Feed freigegeben und verbunden ist, zeigen wir keine Preise als aktuell an. Die Suche kann bereits getestet werden; externe Preisvergleichslinks werden separat gekennzeichnet.",
+ empty:"Suche ein Produkt oder wähle eine Kategorie. Verifizierte Händlerpreise erscheinen nach Anbindung der Datenpartner.",
+ checkTitle:"So prüfen wir Angebote",checkSub:"Transparenz statt Fantasiepreise.",features:[["🔎","Exakte Produktzuordnung","EAN/GTIN, Marke, Modell, Größe, Farbe und Variante werden getrennt geprüft."],["🚚","Gesamtpreis","Artikelpreis plus Versandkosten, mit Lieferstatus und Händler."],["🕒","Frische Daten","Jedes Angebot erhält Abrufzeit und Quelle. Veraltete Angebote nennen wir nicht aktuell."]],
+ fuelTitle:"⛽ Kraftstoffpreise",fuelSub:"Die Tankstellensuche kommt in einer späteren Ausbaustufe.",later:"SPÄTER",fuelEmpty:"Jetzt konzentrieren wir uns auf den Produktpreisvergleich. Das Kraftstoffmodul ist nicht Teil dieser Entwicklungsphase.",
+ footer:"© SmartPrice Germany · Produktvergleich MVP",footerRight:"Preise nur aus freigegebenen Datenquellen · Impressum · Datenschutz",
+ noFeed:"Noch keine freigegebene Händler-Datenquelle verbunden. Preise werden deshalb nicht angezeigt.",external:"Bis zur Datenpartner-Freigabe kannst du externe Preisvergleiche öffnen:",searching:"Suche nach freigegebenen Händlerdaten …"
+},
+hu:{
+ eyebrow:"Termék-összehasonlítás · Németország",title:'Ne csak az árat nézd.<br><span class="grad">Találd meg a legjobb ajánlatot.</span>',
+ lead:"Hasonlítsd össze a műszaki cikkek, háztartási termékek, autós kiegészítők, ruházat és más termékek ajánlatait. Csak engedélyezett kereskedői forrásból származó árakat jelölünk ellenőrzöttként.",
+ searchPlaceholder:"Termék keresése – pl. iPhone 17, Bosch akkus csavarozó …",searchButton:"Ajánlatok keresése ↗",
+ chips:["✓ Kereskedői forrás","✓ Időbélyeg","✓ Szállítási költség összevetése"],sideLabel:"OKOS VÁSÁRLÁS",sideTitle:"Nagyobb átláthatóság.<br>Kevesebb kiadás.",sideNote:"Pontos termékváltozatok azonosítása, teljes árak összehasonlítása és árfigyelés.",
+ sideFoot:"Nincsenek kitalált mintaárak a találatok között.",categories:"Népszerű kategóriák",categoriesSub:"Elektronikától az autós kiegészítőkig – termék-összehasonlítás Németországban.",
+ cats:[["Elektronika","Telefonok, PC, TV"],["Otthon és kert","Háztartás, bútor, szerszám"],["Autó és kiegészítők","Alkatrész, gumi, ápolás"],["Divat és sport","Ruházat, cipő"],["Drogéria","Testápolás, egészség"],["Mindennapok","Háztartás, élelmiszer"]],
+ resultTitle:"Termékajánlatok összehasonlítása",resultSub:"Csatlakoztatott és jóváhagyott kereskedői adatfeedek találatai.",live:"ÉLŐ ADATKAPCSOLAT SZÜKSÉGES",sortPrice:"Teljes ár: növekvő",sortRecent:"Legutóbb frissítve",availability:"Minden elérhetőség",available:"Azonnal szállítható",
+ notice:"A termékadatbázis előkészítés alatt áll. Amíg legalább egy kereskedői adatfeed nincs jóváhagyva és csatlakoztatva, nem jelenítünk meg aktuálisként árakat. A kereső kipróbálható; a külső ár-összehasonlító linkeket külön jelöljük.",
+ empty:"Keress egy termékre vagy válassz kategóriát. Az ellenőrzött kereskedői árak az adatpartnerek csatlakoztatása után jelennek meg.",
+ checkTitle:"Így ellenőrizzük az ajánlatokat",checkSub:"Átláthatóság, nem kitalált árak.",features:[["🔎","Pontos termékazonosítás","EAN/GTIN, márka, modell, méret, szín és változat külön ellenőrzése."],["🚚","Teljes ár","Termékár és szállítási költség, elérhetőség és kereskedő."],["🕒","Friss adatok","Minden ajánlathoz lekérdezési idő és forrás tartozik. Az elavult ajánlatot nem nevezzük aktuálisnak."]],
+ fuelTitle:"⛽ Üzemanyagárak",fuelSub:"A benzinkútkereső egy későbbi fejlesztési szakaszban érkezik.",later:"KÉSŐBB",fuelEmpty:"Most a termékárak összehasonlítására koncentrálunk. Az üzemanyagmodul nem része ennek a fejlesztési szakasznak.",
+ footer:"© SmartPrice Germany · Termék-összehasonlító MVP",footerRight:"Árak csak jóváhagyott adatforrásokból · Impresszum · Adatvédelem",
+ noFeed:"Még nincs csatlakoztatva jóváhagyott kereskedői adatforrás. Ezért árakat nem jelenítünk meg.",external:"Az adatpartneri jóváhagyásig külső ár-összehasonlítókat nyithatsz meg:",searching:"Jóváhagyott kereskedői adatok keresése …"
+}};
+function applyLanguage(lang){
+ const t=translations[lang]||translations.de;document.documentElement.lang=lang;
+ document.querySelector(".eyebrow").textContent=t.eyebrow;
+ document.querySelector(".hero h1").innerHTML=t.title;
+ document.querySelector(".lead").textContent=t.lead;
+ $("q").placeholder=t.searchPlaceholder;$("search").textContent=t.searchButton;
+ document.querySelectorAll(".hero-main .pill").forEach((el,i)=>el.textContent=t.chips[i]);
+ document.querySelector(".hero-side div:nth-child(1) div:first-child").textContent=t.sideLabel;
+ document.querySelector(".side-title").innerHTML=t.sideTitle;document.querySelector(".side-note").textContent=t.sideNote;
+ document.querySelector(".hero-side .side-note:last-child").textContent=t.sideFoot;
+ document.querySelectorAll(".head")[0].querySelector("h2").textContent=t.categories;
+ document.querySelectorAll(".head")[0].querySelector("p").textContent=t.categoriesSub;
+ document.querySelectorAll(".cat").forEach((el,i)=>{el.querySelector("b").textContent=t.cats[i][0];el.querySelector("small").textContent=t.cats[i][1];});
+ const heads=document.querySelectorAll(".panel .head");heads[0].querySelector("h2").textContent=t.resultTitle;heads[0].querySelector("p").textContent=t.resultSub;heads[0].querySelector(".pill").textContent=t.live;
+ $("sort").innerHTML=`<option value="price">${t.sortPrice}</option><option value="recent">${t.sortRecent}</option>`;
+ $("availability").innerHTML=`<option value="all">${t.availability}</option><option value="in">${t.available}</option>`;
+ document.querySelector(".status").textContent=t.notice;
+ if(!$("results").dataset.searched)$("results").innerHTML=`<div class="empty">${t.empty}</div>`;
+ heads[1].querySelector("h2").textContent=t.checkTitle;heads[1].querySelector("p").textContent=t.checkSub;
+ document.querySelectorAll(".feature").forEach((el,i)=>{el.innerHTML=`${t.features[i][0]} <b>${t.features[i][1]}</b><span>${t.features[i][2]}</span>`;});
+ heads[2].querySelector("h2").textContent=t.fuelTitle;heads[2].querySelector("p").textContent=t.fuelSub;heads[2].querySelector(".pill").textContent=t.later;
+ heads[2].nextElementSibling.textContent=t.fuelEmpty;
+ document.querySelector(".foot span:first-child").textContent=t.footer;document.querySelector(".foot span:last-child").textContent=t.footerRight;
+ localStorage.setItem("smartprice-language",lang);
+}
+const languageSelect=$("languageSelect");
+const savedLanguage=localStorage.getItem("smartprice-language");
+languageSelect.value=(savedLanguage==="hu"?"hu":"de");applyLanguage(languageSelect.value);
+languageSelect.addEventListener("change",()=>applyLanguage(languageSelect.value));
+
+function esc(s){return String(s??"").replace(/[&<>"']/g,c=>({"&":"&amp;","<":"&lt;",">":"&gt;",'"':"&quot;","'":"&#39;"}[c]));}
+async function searchProducts(){
+ const q=$("q").value.trim();if(!q){$("q").focus();return;}
+ $("resultTitle").textContent="Suchergebnisse für „"+q+"“";
+ const t=translations[languageSelect.value]||translations.de;
+ $("results").dataset.searched="1";
+ $("results").innerHTML=`<div class="empty">${t.searching}</div>`;
+ try{
+  const p=new URLSearchParams({q,category:selectedCategory,sort:$("sort").value,availability:$("availability").value});
+  const r=await fetch("/api/products?"+p.toString(),{headers:{"Accept":"application/json"}});
+  const data=await r.json();
+  if(!r.ok||!data.ok)throw new Error(data.message||"Noch keine Händler-Datenquelle verbunden.");
+  if(!Array.isArray(data.offers)||!data.offers.length)throw new Error("Keine verifizierten Händlerangebote gefunden.");
+  $("results").innerHTML=data.offers.map(o=>`<article class="product"><div><h3>${esc(o.title)}</h3><p>${esc(o.merchant)} · ${esc(o.condition||"Neu")} · ${esc(o.availability||"Verfügbarkeit unbekannt")}</p><p>Quelle: ${esc(o.source)} · Abgerufen: ${new Date(o.fetchedAt).toLocaleString("de-DE")}</p></div><div><b style="color:var(--cyan);font-size:19px">${Number(o.totalPrice).toFixed(2).replace(".",",")} €</b><div class="actions"><a class="link" href="${esc(o.url)}" target="_blank" rel="noopener">Zum Händler ↗</a></div></div></article>`).join("");
+ }catch(e){
+  const enc=encodeURIComponent(q);const t=translations[languageSelect.value]||translations.de;
+  $("results").innerHTML=`<div class="empty">${esc(e.message)}<br><br><span style="color:#9aabc2">${t.external}</span><div class="actions" style="justify-content:center;margin-top:12px"><a class="link" target="_blank" rel="noopener" href="https://www.idealo.de/preisvergleich/MainSearchProductCategory.html?q=${enc}">idealo ↗</a><a class="link" target="_blank" rel="noopener" href="https://geizhals.de/?fs=${enc}">Geizhals ↗</a><a class="link" target="_blank" rel="noopener" href="https://www.google.com/search?tbm=shop&q=${enc}">Google Shopping ↗</a></div></div>`;
+ }
+}
+$("search").addEventListener("click",searchProducts);$("q").addEventListener("keydown",e=>{if(e.key==="Enter")searchProducts()});
+document.querySelectorAll(".cat").forEach(el=>el.addEventListener("click",()=>{document.querySelectorAll(".cat").forEach(x=>x.classList.remove("active"));el.classList.add("active");selectedCategory=el.dataset.cat;$("q").value=el.querySelector("b").textContent;searchProducts();}));
+$("sort").addEventListener("change",()=>{if($("q").value.trim())searchProducts()});$("availability").addEventListener("change",()=>{if($("q").value.trim())searchProducts()});
+</script></body></html>
